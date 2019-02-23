@@ -4,12 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>it.diepet.spring.playground</groupId>
-	<artifactId>helloboot</artifactId>
+	<artifactId>spring-helloboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>helloboot</name>
-	<url>http://maven.apache.org</url>
+	<name>spring-helloboot</name>
 
 	<properties>
 
