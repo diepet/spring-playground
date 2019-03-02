@@ -21,11 +21,14 @@ public class HelloController {
     @RequestMapping("/")
     public String index() {
     	
-    	this.customerRepository.save(new Customer("AAA", "BBB"));
+    	final Customer customer = new Customer();
+    	customer.setFirstName("AAA");
+    	customer.setLastName("BBB");
+    	this.customerRepository.save(customer);
     	
     	Iterable<Customer> customers = this.customerRepository.findAll();
-    	for (Customer customer : customers) {
-    		LOGGER.info(customer.toString());
+    	for (Customer currentCustomer : customers) {
+    		LOGGER.info(currentCustomer.toString());
     	}
     	
         return "Greetings from Spring Boot!";
