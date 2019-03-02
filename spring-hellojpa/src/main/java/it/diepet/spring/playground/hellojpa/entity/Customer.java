@@ -3,6 +3,7 @@ package it.diepet.spring.playground.hellojpa.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +19,7 @@ public class Customer implements Serializable {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Location location;
 
 	public Long getId() {
@@ -80,7 +81,8 @@ public class Customer implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + "]";
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", location=" + location
+				+ "]";
 	}
 
 }
