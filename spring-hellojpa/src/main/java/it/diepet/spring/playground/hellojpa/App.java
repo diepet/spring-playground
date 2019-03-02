@@ -19,6 +19,6 @@ public class App {
 
 	@Bean
 	public PromptProvider myPromptProvider() {
-		return () -> new AttributedString("shell:>", AttributedStyle.DEFAULT.foreground(AttributedStyle.RED));
+		return () -> new AttributedString("shell:>", AttributedStyle.DEFAULT.foreground(AttributedStyle.CYAN));
 	}
 }
