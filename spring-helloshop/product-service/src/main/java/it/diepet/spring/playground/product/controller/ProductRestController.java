@@ -15,11 +15,6 @@ public class ProductRestController {
 	@Autowired
 	private ProductRepository productRepository;
 
-	@RequestMapping("/")
-	public String index() {
-		return "Greetings from Product Service!";
-	}
-
 	@RequestMapping("/product")
 	public String listAll() {
 		String products = StreamSupport.stream(productRepository.findAll().spliterator(), false).map(product -> product.toString())
