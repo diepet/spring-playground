@@ -23,6 +23,7 @@
 	<modules>
 		<module>spring-helloboot</module>
 		<module>spring-hellojpa</module>
+		<module>spring-helloshop</module>
 	</modules>
 
 	<dependencies>
