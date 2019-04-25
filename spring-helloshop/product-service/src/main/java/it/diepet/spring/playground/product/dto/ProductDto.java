@@ -16,8 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Builder
-public class ProductDTO {
+@Builder(toBuilder = true)
+public class ProductDto {
 
 	@NonNull
 	private String code;
