@@ -24,11 +24,11 @@ public class ProductRestController {
 	public List<Product> listAll() {
 		return StreamSupport.stream(productRepository.findAll().spliterator(), false).collect(Collectors.toList());
 	}
-	
+
 	@RequestMapping("/product/{productId}")
 	public Product getProduct(@PathVariable("productId") final long productId) {
-		final Optional<Product> product = productRepository.findById(productId);
-		return product.orElseThrow(() -> new ProductNotFoundException(String.format("Unable to find product having %d as ID", productId)));
+		return productRepository.findById(productId).orElseThrow(
+				() -> new ProductNotFoundException(String.format("Unable to find product having %d as ID", productId)));
 	}
-	
+
 }
