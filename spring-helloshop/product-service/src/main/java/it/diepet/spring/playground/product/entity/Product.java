@@ -1,5 +1,7 @@
 package it.diepet.spring.playground.product.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,9 @@ import lombok.ToString;
 
 @Entity
 @Getter @Setter @NoArgsConstructor @ToString @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Product {
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 1488916583581705419L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,5 +1,7 @@
 package it.diepet.spring.playground.product.dto;
 
+import java.io.Serializable;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +19,9 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
-public class ProductDto {
+public class ProductDto implements Serializable {
+
+	private static final long serialVersionUID = -5388628403814971317L;
 
 	@NonNull
 	private String code;
