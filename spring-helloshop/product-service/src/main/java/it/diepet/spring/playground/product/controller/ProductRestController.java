@@ -1,7 +1,6 @@
 package it.diepet.spring.playground.product.controller;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -28,7 +27,7 @@ public class ProductRestController {
 	@RequestMapping("/product/{productId}")
 	public Product getProduct(@PathVariable("productId") final long productId) {
 		return productRepository.findById(productId).orElseThrow(
-				() -> new ProductNotFoundException(String.format("Unable to find product having %d as ID", productId)));
+				() -> new ProductNotFoundException(productId));
 	}
 
 }

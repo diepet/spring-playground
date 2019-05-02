@@ -8,7 +8,7 @@ public class ProductDtoTests {
 
 	@Test
 	public void allFieldsPopulated() {
-		final ProductDto productDto = ProductDto.builder().code("AA").description("BB").build();
+		ProductDto productDto = ProductDto.builder().code("AA").description("BB").build();
 		assertThat(productDto).isNotNull();
 		assertThat(productDto.getCode()).isEqualTo("AA");
 		assertThat(productDto.getDescription()).isEqualTo("BB");
@@ -16,8 +16,8 @@ public class ProductDtoTests {
 	
 	@Test
 	public void copyFromToBuilder() {
-		final ProductDto productDto = ProductDto.builder().code("AA").description("BB").build();
-		final ProductDto productDtoCopy = productDto.toBuilder().build();
+		ProductDto productDto = ProductDto.builder().code("AA").description("BB").build();
+		ProductDto productDtoCopy = productDto.toBuilder().build();
 		assertThat(productDtoCopy).isNotNull();
 		assertThat(productDtoCopy.getCode()).isEqualTo("AA");
 		assertThat(productDtoCopy.getDescription()).isEqualTo("BB");

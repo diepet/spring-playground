@@ -4,22 +4,17 @@ public class ProductNotFoundException extends ApplicationException {
 
 	private static final long serialVersionUID = -6993605929420837668L;
 
-	public ProductNotFoundException() {
-		super();
+	final private long productId;
+	
+	public ProductNotFoundException(final long productId) {
+		super(String.format("Unable to find product having %d as ID", productId));
+		this.productId = productId;
 	}
 
-	public ProductNotFoundException(String message, Throwable cause) {
-		super(message, cause);
+	public long getProductId() {
+		return productId;
 	}
-
-	public ProductNotFoundException(String message) {
-		super(message);
-	}
-
-	public ProductNotFoundException(Throwable cause) {
-		super(cause);
-	}
-
+	
 	@Override
 	public String getCode() {
 		return this.getClass().getSimpleName();
