@@ -3,7 +3,6 @@ package it.diepet.spring.playground.product.mapper;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-import org.mapstruct.factory.Mappers;
 
 import it.diepet.spring.playground.product.dto.ProductDto;
 import it.diepet.spring.playground.product.entity.Product;
